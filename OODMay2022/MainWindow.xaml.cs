@@ -49,6 +49,7 @@ namespace OODMay2022
             {
                 //update display
                 tblkPropertyDetails.Text = selected.GetDetails();
+                imgPropertyImage.Source = new BitmapImage(new Uri(selected.PropertyImage, UriKind.Relative));
             }
 
         }
