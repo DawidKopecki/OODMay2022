@@ -20,9 +20,37 @@ namespace OODMay2022
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<RentalProperty> allProperties;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            RentData db = new RentData();
+
+            var query = from p in db.RentalProperties
+                        orderby p.Price
+                        select p;
+
+            allProperties = query.ToList();
+
+            lbxProperties.ItemsSource = allProperties;
+        }
+
+        private void lbxProperties_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Determine what was selected 
+            RentalProperty selected = lbxProperties.SelectedItem as RentalProperty;
+
+            //check not null
+            if (selected != null)
+            {
+                //update display
+                tblkPropertyDetails.Text = selected.GetDetails();
+            }
+
         }
     }
 }

@@ -15,13 +15,24 @@ namespace OODMay2022
         public string Location { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        
-    }
+
+        public override string ToString()
+        {
+            return Location;
+        }
+
+        public string GetDetails()
+        {
+            return $"{Description}";
+        }
+      
+    }//End of RentalType Class
+
     public enum RentalType
     {
         House, Flat, Share
     }
-
+    
     public class RentData:DbContext
     {
         public RentData() : base("MyPropertyData") { }
