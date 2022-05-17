@@ -53,5 +53,11 @@ namespace OODMay2022
             }
 
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+           // Window1 sw = new second();
+           // Show
+        }
     }
 }

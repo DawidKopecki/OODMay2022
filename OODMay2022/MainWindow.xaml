@@ -17,9 +17,16 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="20" Name="lbxProperties" SelectionChanged="lbxProperties_SelectionChanged"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" Margin="20" Name="tblkPropertyDetails" TextWrapping="Wrap"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Content="Property Listing" Margin="5" FontSize="20"/>
+
+        </StackPanel>
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="40" Name="lbxProperties" SelectionChanged="lbxProperties_SelectionChanged"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Margin="40" Name="tblkPropertyDetails" TextWrapping="Wrap"/>
+
         <Image Grid.Row="1" Grid.Column="1" Margin="20" Name="imgPropertyImage"/>
+
+        <Button Name="button1" Content="Add" Margin="305,10,10,180" Grid.Column="1" Click="button1_Click"/>
 
     </Grid>
 </Window>
